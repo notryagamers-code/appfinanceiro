@@ -332,9 +332,6 @@ export default function Movimentacoes() {
         const url = editando
             ? `https://appfinanceiro-23oq.onrender.com/api/movimentacoes/${editando}`
             : "https://appfinanceiro-23oq.onrender.com/api/movimentacoes";
-            ?`https://appfinanceiro-23oq.onrender.com/api/movimentacoes/${editando}`
-            : "https://appfinanceiro-23oq.onrender.com/api/movimentacoes";
-
         fetch(url, {
             method: metodo,
             headers: { "Content-Type": "application/json" },
