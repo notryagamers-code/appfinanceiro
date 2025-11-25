@@ -2,9 +2,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TopMenu from "./components/TopMenu";
 
 import Remuneracoes from "./pages/Remuneracoes";
-import Pagamentos from "./pages/Pagamentos";
+import Pagamentos from "./pages/pagamentos";
 import Fechamentos from "./pages/Fechamentos";
-import Fornecedores from "./pages/Fornecedores";
+import Fornecedores from "./pages/fornecedores";
 import Movimentacoes from "./pages/movimentacoes";
 
 export default function App() {

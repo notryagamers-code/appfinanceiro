@@ -132,11 +132,13 @@ export default function Movimentacoes() {
     // carregar dados
     function carregarMov() {
         fetch("https://appfinanceiro-23oq.onrender.com/api/movimentacoes")
+        fetch("https://appfinanceiro-23oq.onrender.com/api/movimentacoes")
             .then(r => r.json())
             .then(setDados)
             .catch(() => setDados([]));
     }
     function carregarFornecedores() {
+        fetch("https://appfinanceiro-23oq.onrender.com/api/fornecedores")
         fetch("https://appfinanceiro-23oq.onrender.com/api/fornecedores")
             .then(r => r.json())
             .then(setFornecedores)
@@ -329,6 +331,8 @@ export default function Movimentacoes() {
         const metodo = editando ? "PUT" : "POST";
         const url = editando
             ? `https://appfinanceiro-23oq.onrender.com/api/movimentacoes/${editando}`
+            : "https://appfinanceiro-23oq.onrender.com/api/movimentacoes";
+            ?`https://appfinanceiro-23oq.onrender.com/api/movimentacoes/${editando}`
             : "https://appfinanceiro-23oq.onrender.com/api/movimentacoes";
 
         fetch(url, {
