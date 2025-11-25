@@ -8,11 +8,11 @@ export default function Remuneracoes() {
 
     useEffect(() => {
 
-        fetch("/api/movimentacoes")
+        fetch("https://appfinanceiro-23oq.onrender.com/api/movimentacoes")
             .then(r => r.json())
             .then(setDados);
 
-        fetch("/api/fornecedores")
+        fetch("https://appfinanceiro-23oq.onrender.com/api/fornecedores")
             .then(r => r.json())
             .then(setFornecedores);
 
