@@ -47,7 +47,7 @@ export default function Fornecedores() {
 
     // carregar dados
     function carregar() {
-        fetch("/api/fornecedores")
+        fetch("https://appfinanceiro-23oq.onrender.com/api/fornecedores")
             .then(res => res.json())
             .then(data => setDados(data));
     }
@@ -154,8 +154,8 @@ export default function Fornecedores() {
 
         const metodo = editando ? "PUT" : "POST";
         const url = editando
-            ? `/api/fornecedores/${editando}`
-            : "/api/fornecedores";
+            ? `https://appfinanceiro-23oq.onrender.com/api/fornecedores/${editando}`
+            : "https://appfinanceiro-23oq.onrender.com/api/fornecedores";
 
         const body = { id: novoID, ...form };
 
@@ -173,7 +173,7 @@ export default function Fornecedores() {
     // --- EXCLUIR ---
     function excluir(id) {
         if (!confirm("Deseja realmente excluir?")) return;
-        fetch(`/api/fornecedores/${id}`, {
+        fetch(`https://appfinanceiro-23oq.onrender.com/api/fornecedores/${id}`, {
             method: "DELETE"
         }).then(() => carregar());
     }
