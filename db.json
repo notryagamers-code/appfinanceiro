@@ -1,0 +1,29 @@
+{
+  "fornecedores": [
+    {
+      "id": "0615049",
+      "nome": "SISPEL SISTEMAS INTEGRADOS DE SOFTWARE LTDA",
+      "cnpj": "06.150.972/0001-49",
+      "fantasia": "SISPEL",
+      "cep": "76928000",
+      "logradouro": "LUIZ BORGES",
+      "numero": "1.128",
+      "complemento": "",
+      "bairro": "CENTRO",
+      "municipio": "TEIXEIROPOLIS",
+      "uf": "RO"
+    }
+  ],
+  "movimentacoes": [
+    {
+      "id_fornecedor": "0615049",
+      "nome_fornecedor": "SISPEL SISTEMAS INTEGRADOS DE SOFTWARE LTDA",
+      "data": "2025-10-01",
+      "numero_documento": "55",
+      "valor": 9064,
+      "percentual_retido": 5,
+      "retido": 453.2,
+      "id": "dgdr8mmv"
+    }
+  ]
+}

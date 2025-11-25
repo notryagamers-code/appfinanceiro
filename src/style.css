@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f5f7;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* MENU SUPERIOR */
+
+.top-menu {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+}
+
+.top-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.menu-item {
+    padding: 6px 10px;
+    color: #666;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+}
+
+.menu-item.active {
+    color: #2563eb;
+    border-bottom-color: #2563eb;
+    font-weight: bold;
+}
+
+/* ÁREA DE CONTEÚDO */
+
+.content-wrapper {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* BOX PADRÃO DE PÁGINA */
+
+.page-box {
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* TABELAS */
+
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela th,
+.tabela td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabela thead tr {
+    background: #f1f1f1;
+}
+
+/* MOVIMENTAÇÕES */
+
+.mov-card {
+    border: 1px solid #ddd;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    background: #fafafa;
+}

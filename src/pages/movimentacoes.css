@@ -1,0 +1,1310 @@
+@import "./fornecedores.css";
+
+/* base card */
+.card {
+    background: #fff;
+    padding: 18px;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+/* header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.header .btn {
+    padding: 8px 12px;
+    border-radius: 6px;
+    background: #1967d2;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* tabela */
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+}
+
+.tabela th,
+.tabela td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.tabela thead th {
+    background: transparent;
+    font-weight: 700;
+}
+
+.tabela tbody tr:hover {
+    background: #fafcff;
+}
+
+/* filtro popup */
+.filtro-container {
+    position: relative;
+    margin-bottom: 10px;
+
+}
+
+.filtro-btn {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background: #f5f5f5;
+    cursor: pointer;
+}
+
+.filtro-popup {
+    position: absolute;
+    left: 0;
+    top: 40px;
+    width: 360px;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    z-index: 900;
+}
+
+.filtro-popup h3 {
+    margin: 0 0 8px 0;
+}
+
+.filtro-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.filtro-row label {
+    min-width: 34px;
+    font-size: 13px;
+    color: #333;
+}
+
+.filtro-row input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.filtro-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.btn-aplicar {
+    background: #1e88e5;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-limpar {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-cancelar {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* modal backdrop */
+.modal-bg {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.42);
+    z-index: 1200;
+}
+
+/* modal */
+.modal {
+    background: #fff;
+    border-radius: 8px;
+    padding: 22px;
+    width: 720px;
+    max-width: 95%;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    transform-origin: center;
+}
+
+.modal-animated {
+    animation: popIn .14s ease-out;
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(.98) translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.modal h2 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+/* grid in modal */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+.field.full {
+    grid-column: 1 / -1;
+}
+
+.field label {
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.field input {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #d7d7d7;
+}
+
+/* modal actions */
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.btn {
+    background: #1967d2;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-cancel {
+    background: #9aa0a6;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+/* autocomplete row + select */
+.autocomplete-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    position: relative;
+}
+
+.autocomplete-input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.btn-select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background: #f5f5f5;
+    cursor: pointer;
+}
+
+/* suggestions (top 5) */
+.autocomplete-list-wrapper {
+    position: relative;
+}
+
+.autocomplete-list {
+    position: absolute;
+    top: 46px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #e3e3e3;
+    border-radius: 8px;
+    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.12);
+    max-height: 260px;
+    overflow: auto;
+    z-index: 1300;
+    padding: 6px 6px;
+}
+
+.autocomplete-item {
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.autocomplete-item:hover,
+.autocomplete-item.highlight {
+    background: #eef6ff;
+}
+
+.sel-name {
+    font-weight: 700;
+}
+
+.sel-meta {
+    color: #666;
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+/* selector panel inline */
+.selector-panel {
+    margin-top: 12px;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    max-height: 320px;
+    overflow: auto;
+}
+
+.selector-header {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.selector-header input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.selector-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.selector-item {
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.selector-item:hover {
+    background: #f6f9ff;
+    border-color: #e1ecff;
+}
+
+/* selector overlay (if used) */
+.selector-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.selector-card {
+    width: 500px;
+    max-width: 95%;
+    background: #fff;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+    pointer-events: auto;
+}
+
+/* small utilities */
+.muted {
+    color: #777;
+    padding: 8px 10px;
+    font-size: 13px;
+}
+
+.sortable {
+    cursor: pointer;
+}
+
+.sortable:hover {
+    background: #f0f0f0;
+}
+
+.paginacao {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.paginacao button {
+    padding: 6px 12px;
+}
+
+.paginacao select {
+    padding: 5px 8px;
+}
+
+
+
+.ano-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.ano-selector button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.mes-selector {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.mes-item {
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #555;
+    border: 1px solid transparent;
+    transition: 0.2s;
+}
+
+.mes-item:hover {
+    background: #e8e8e8;
+}
+
+.mes-item.ativo {
+    background: #2f73da;
+    color: white;
+    border-color: #1e5cb8;
+}
+
+.mes-item.geral {
+    font-weight: bold;
+}
+
+/* ------------------------------
+   BARRA DE AÇÕES - ESTILO BETHA
+--------------------------------*/
+.betha-action-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 25px 0 15px 0;
+}
+
+.betha-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    background: #f8f8f8;
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    color: #555;
+    transition: background 0.2s;
+}
+
+.betha-btn:hover {
+    background: #ececec;
+}
+
+.atualizar-btn {
+    color: #2f73da;
+    border-color: #bcd0f5;
+}
+
+.imprimir-btn {
+    color: #555;
+}
+
+/* ------------------------------
+   DROPDOWN IMPRIMIR
+--------------------------------*/
+.imprimir-dropdown {
+    position: relative;
+
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 32px;
+    left: 0;
+    width: 160px;
+    background: white;
+    border: 1px solid #cfcfcf;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    z-index: 20;
+}
+
+.dropdown-item {
+    padding: 8px 12px;
+    font-size: 13px;
+    cursor: pointer;
+    color: #444;
+    background: #efefef;
+    border: 1px solid #dcdcdc;
+}
+
+.dropdown-item:hover {
+    background: #f3f3f3;
+}
+
+/* ------------------------------
+   CAMPO PESQUISAR
+--------------------------------*/
+.betha-pesquisar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.betha-pesquisar input {
+    border: none;
+    padding: 6px 10px;
+    outline: none;
+    width: 180px;
+}
+
+.search-btn {
+    background: #f2f2f2;
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+/* ------------------------------
+   TIMELINE BETHA MODERNA
+--------------------------------*/
+
+
+/* =========================================
+   BARRA DE AÇÕES BETHA
+========================================= */
+.betha-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 18px 0 15px 0;
+    padding-bottom: 8px;
+}
+
+.betha-btn {
+    background: #f7f7f7;
+    border: 1px solid #d6d6d6;
+    padding: 6px 14px;
+    border-radius: 5px;
+    font-size: 13px;
+    color: #555;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: 0.2s;
+}
+
+.betha-btn:hover {
+    background: #ececec;
+}
+
+/* ícones */
+.icon {
+    font-size: 15px;
+}
+
+/* dropdown */
+.dropdown-area {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #dcdcdc;
+    width: 160px;
+    top: 36px;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 20;
+}
+
+.dropdown-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 13px;
+    color: #444;
+}
+
+.dropdown-item:hover {
+    background: #f2f2f2;
+}
+
+/* Caixa de busca estilo Betha */
+.betha-search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-left: auto;
+    /* joga tudo para a esquerda */
+}
+
+.betha-search-box input {
+    padding: 6px 10px;
+    border: none;
+    outline: none;
+    width: 220px;
+    font-size: 14px;
+    background: white;
+}
+
+.icon-btn {
+    background: #efefef;
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-left: 1px solid #d6d6d6;
+}
+
+.icon-btn:hover {
+    background: #e2e2e2;
+}
+
+/* ============================================
+   TOOLBAR BETHA
+=================================================*/
+.betha-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0 6px;
+    border-bottom: 1px solid #e3e3e3;
+    margin-bottom: 10px;
+}
+
+.betha-btn {
+    background: #f7f7f7;
+    border: 1px solid #d3d3d3;
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    color: #444;
+}
+
+.betha-btn:hover {
+    background: #ececec;
+}
+
+.betha-search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #d3d3d3;
+    border-radius: 4px;
+    margin-left: auto;
+}
+
+.betha-search-box input {
+    border: none;
+    outline: none;
+    padding: 6px 10px;
+    width: 220px;
+}
+
+.icon-btn {
+    background: #efefef;
+    border-left: 1px solid #d3d3d3;
+    cursor: pointer;
+    padding: 6px 10px;
+}
+
+.icon-btn:hover {
+    background: #e2e2e2;
+}
+
+/* dropdown imprimir */
+.dropdown-area {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 32px;
+    background: white;
+    border: 1px solid #dcdcdc;
+    width: 160px;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background: #f2f2f2;
+}
+
+/* DROPDOWN DO FILTRO */
+.betha-filter-panel {
+    margin-top: 6px;
+    background: #fafafa;
+    border: 1px solid #d9d9d9;
+    padding: 12px;
+    border-radius: 4px;
+    width: 300px;
+}
+
+.betha-filter-panel h4 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+}
+
+.filter-row {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* TAGS */
+.betha-tags-area {
+    display: flex;
+    gap: 8px;
+    padding: 8px 4px;
+}
+
+.betha-tag {
+    background: #f2f2f2;
+    border: 1px solid #d4d4d4;
+    border-radius: 20px;
+    padding: 4px 10px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tag-close {
+    background: none;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* PAINEL DE FILTRO */
+.betha-filtro-painel {
+    background: #fafafa;
+    padding: 14px;
+    border-radius: 6px;
+    border: 1px solid #dcdcdc;
+    margin-top: 8px;
+    animation: fadeIn 0.15s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.betha-filtro-painel h4 {
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+.filtro-itens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filtro-opcao {
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: #f7f7f7;
+    border: 1px solid #d0d0d0;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.15s;
+}
+
+.filtro-opcao:hover {
+    background: #eaeaea;
+}
+
+.filtro-opcao.selecionado {
+    background: #2f73da;
+    border-color: #1956c5;
+    color: white;
+}
+
+.filtro-acoes {
+    margin-top: 12px;
+    display: flex;
+    gap: 10px;
+}
+
+.betha-btn.limpar {
+    background: #fff3f3;
+    border-color: #f0b5b5;
+}
+
+/* ---------- base (seu css existente deve permanecer) ---------- */
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 18px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.02);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+
+/* toolbar */
+.betha-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+.betha-btn {
+    background: #f7f7f7;
+    border: 1px solid #d6d6d6;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #444;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.betha-btn:hover {
+    background: #ececec;
+}
+
+.dropdown-area {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 36px;
+    left: 0;
+    background: #fff;
+    border: 1px solid #dcdcdc;
+    width: 160px;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    z-index: 40;
+}
+
+.dropdown-item {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background: #f3f3f3;
+}
+
+/* search box */
+.betha-search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-left: auto;
+}
+
+.betha-search-box input {
+    border: none;
+    outline: none;
+    padding: 6px 10px;
+    width: 260px;
+}
+
+.icon-btn {
+    background: #efefef;
+    border-left: 1px solid #d6d6d6;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.icon-btn:hover {
+    background: #e2e2e2;
+}
+
+/* tags */
+.betha-tags-area {
+    display: flex;
+    gap: 8px;
+    padding: 8px 4px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+}
+
+.betha-tag {
+    background: #f2f2f2;
+    border: 1px solid #d4d4d4;
+    border-radius: 20px;
+    padding: 4px 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+
+.tag-close {
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* tabela básica (preserve seu estilo existente) */
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+}
+
+.tabela th,
+.tabela td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.tabela thead th {
+    background: #f6f6f6;
+    font-weight: 700;
+}
+
+.btn-edit {
+    background: #08a;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    margin-right: 6px;
+    cursor: pointer;
+}
+
+.btn-del {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* paginação */
+.paginacao {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.paginacao button {
+    padding: 6px 10px;
+}
+
+.paginacao select {
+    padding: 6px 8px;
+}
+
+/* lateral panel (option C) */
+.lateral-panel {
+    position: fixed;
+    top: 80px;
+    right: -380px;
+    width: 360px;
+    max-width: 92vw;
+    height: calc(100% - 120px);
+    background: #fff;
+    border-left: 1px solid #e6e6e6;
+    box-shadow: -6px 0 16px rgba(0, 0, 0, 0.06);
+    padding: 16px;
+    border-radius: 6px 0 0 6px;
+    transition: right .22s ease;
+    z-index: 60;
+    overflow: auto;
+}
+
+.lateral-panel.open {
+    right: 18px;
+}
+
+/* visible position */
+.lateral-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.12);
+    z-index: 50;
+}
+
+.lateral-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.lateral-header h3 {
+    margin: 0;
+}
+
+.lateral-section {
+    margin-bottom: 14px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed #eee;
+}
+
+.linha-datas {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.linha-datas label {
+    display: block;
+    font-size: 13px;
+    color: #444;
+    margin-bottom: 4px;
+}
+
+.linha-datas input {
+    padding: 6px 8px;
+    border-radius: 4px;
+    border: 1px solid #d0d0d0;
+}
+
+.filtro-acoes {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.betha-btn.aplicar {
+    background: #2f73da;
+    color: white;
+    border-color: #1c5ac1;
+}
+
+.betha-btn.limpar {
+    background: #fff3f3;
+    color: #bf5f5f;
+    border-color: #e4b7b7;
+}
+
+/* filtros rapidos (chips inside lateral) */
+.filtro-itens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.filtro-opcao {
+    padding: 8px 12px;
+    border-radius: 20px;
+    background: #f7f7f7;
+    border: 1px solid #d0d0d0;
+    cursor: pointer;
+}
+
+.filtro-opcao.selecionado {
+    background: #2f73da;
+    color: white;
+    border-color: #1956c5;
+}
+
+/* modal styles (basic) */
+.modal-bg {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 80;
+}
+
+.modal {
+    background: white;
+    border-radius: 8px;
+    padding: 18px;
+    width: 720px;
+    max-width: 92vw;
+}
+
+.autocomplete-list {
+    position: absolute;
+    background: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    z-index: 90;
+    max-height: 220px;
+    overflow: auto;
+}
+
+.autocomplete-item {
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+.autocomplete-item.highlight {
+    background: #f0f6ff;
+}
+
+/* small responsive tweaks */
+@media (max-width:900px) {
+    .timeline-left {
+        min-width: 90px;
+    }
+
+    .betha-search-box input {
+        width: 140px;
+    }
+}
+
+/* Remove scroll horizontal global */
+html,
+body {
+    overflow-x: hidden !important;
+}
+
+/* Garante que nada estoure a largura */
+.card,
+.timeline-wrapper,
+.betha-toolbar,
+.tabela,
+.paginacao {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* ===============================
+      TIMELINE BETHA OFICIAL
+=================================*/
+
+/* wrapper com ano à esquerda e meses à direita */
+.timeline-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 10px 0 18px 0;
+    margin-bottom: 12px;
+}
+
+/* ------------------- LADO ESQUERDO ------------------- */
+.timeline-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 110px;
+}
+
+.timeline-year {
+    color: #1f4afa;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* setas */
+.nav-arrow {
+    background: none;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 4px;
+    color: #777;
+    transition: 0.15s;
+}
+
+.nav-arrow:hover {
+    background: #eaf0ff;
+    color: #1f4afa;
+}
+
+/* ------------------- ÁREA CENTRAL ------------------- */
+.timeline-center {
+    flex: 1;
+    position: relative;
+
+}
+
+/* linha */
+.timeline-line {
+    position: absolute;
+    left: 12px;
+    right: 20px;
+    top: 14px;
+    height: 1px;
+    background: #6e6e6e;
+    border-radius: 1px;
+    z-index: 1;
+}
+
+/* meses em linha horizontal */
+.timeline-months {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+    padding-top: 19px;
+}
+
+/* item de mês */
+.month-item {
+    position: relative;
+    cursor: pointer;
+    padding: 10px 10px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: 0.15s ease;
+}
+
+/* bolinha sobre a linha */
+.month-item::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    border-style: solid;
+    border-width: 1px;
+    background: #ffffff;
+    border-radius: 50%;
+    transition: 0.15s ease;
+}
+
+/* ------------------- HOVER ------------------- */
+.month-item:hover {
+    color: #1f4afa;
+    font-weight: 600;
+}
+
+.month-item:hover::before {
+    background: #1f4afa;
+}
+
+/* ------------------- ATIVO ------------------- */
+.month-item.ativo {
+    color: #1f4afa;
+    font-weight: 700;
+}
+
+.month-item.ativo::before {
+    background: #1f4afa;
+    transform: translateX(-50%) scale(1.25);
+}
+
+/* ------------------- GERAL ------------------- */
+.month-item.geral {
+    font-weight: 600;
+    color: #444;
+}
+
+.month-item.geral.ativo {
+    color: #1f4afa;
+}
+
+.month-item.geral.ativo::before {
+    background: #1f4afa;
+}
