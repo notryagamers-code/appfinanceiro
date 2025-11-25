@@ -343,7 +343,7 @@ export default function Movimentacoes() {
 
 
     function excluir(id) {
-        if (!confirm("Deseja excluir?")) return;
+        if (!confirm("Deseja excluir ?")) return;
         fetch(`https://appfinanceiro-23oq.onrender.com/api/movimentacoes/${id}`, { method: "DELETE" }).then(() => carregarMov());
     }
 

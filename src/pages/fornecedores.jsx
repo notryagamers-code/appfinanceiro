@@ -329,7 +329,7 @@ export default function Fornecedores() {
                             onChange={e => setForm({ ...form, logradouro: e.target.value })}
                         />
 
-                        <label>Número:</label>
+                        <label>Número: </label>
                         <input
                             type="text"
                             value={form.numero}

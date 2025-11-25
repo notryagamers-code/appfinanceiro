@@ -16,7 +16,8 @@ export default function Remuneracoes() {
             .then(r => r.json())
             .then(setFornecedores);
 
-    }, []);
+    },
+        []);
 
     return (
         <div className="page-box">
