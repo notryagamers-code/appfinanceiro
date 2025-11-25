@@ -131,13 +131,13 @@ export default function Movimentacoes() {
 
     // carregar dados
     function carregarMov() {
-        fetch("/api/movimentacoes")
+        fetch("https://appfinanceiro-23oq.onrender.com/api/movimentacoes")
             .then(r => r.json())
             .then(setDados)
             .catch(() => setDados([]));
     }
     function carregarFornecedores() {
-        fetch("/api/fornecedores")
+        fetch("https://appfinanceiro-23oq.onrender.com/api/fornecedores")
             .then(r => r.json())
             .then(setFornecedores)
             .catch(() => setFornecedores([]));
@@ -328,8 +328,8 @@ export default function Movimentacoes() {
 
         const metodo = editando ? "PUT" : "POST";
         const url = editando
-            ? `/api/movimentacoes/${editando}`
-            : "/api/movimentacoes";
+            ? `https://appfinanceiro-23oq.onrender.com/api/movimentacoes/${editando}`
+            : "https://appfinanceiro-23oq.onrender.com/api/movimentacoes";
 
         fetch(url, {
             method: metodo,
@@ -344,7 +344,7 @@ export default function Movimentacoes() {
 
     function excluir(id) {
         if (!confirm("Deseja excluir?")) return;
-        fetch(`/api/movimentacoes/${id}`, { method: "DELETE" }).then(() => carregarMov());
+        fetch(`https://appfinanceiro-23oq.onrender.com/api/movimentacoes/${id}`, { method: "DELETE" }).then(() => carregarMov());
     }
 
     // ---------------- chips (filtros) ----------------
