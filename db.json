@@ -12,6 +12,19 @@
       "bairro": "CENTRO",
       "municipio": "TEIXEIROPOLIS",
       "uf": "RO"
+    },
+    {
+      "id": "4324255",
+      "nome": "AYRTON JUNIOR NUNES MORAES LTDA",
+      "cnpj": "43.242.001/0001-55",
+      "fantasia": "",
+      "cep": "76976000",
+      "logradouro": "LINHA 37, LT 11",
+      "numero": "SN",
+      "complemento": "SALA A",
+      "bairro": "SETOR CHACAREIRO",
+      "municipio": "PRIMAVERA DE RONDONIA",
+      "uf": "RO"
     }
   ],
   "movimentacoes": [
