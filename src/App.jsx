@@ -3,7 +3,6 @@ import TopMenu from "./components/TopMenu";
 
 import Remuneracoes from "./pages/Remuneracoes";
 import Pagamentos from "./pages/pagamentos";
-import Fechamentos from "./pages/Fechamentos";
 import Fornecedores from "./pages/fornecedores";
 import Movimentacoes from "./pages/movimentacoes";
 
@@ -18,7 +17,6 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Remuneracoes />} />
             <Route path="/pagamentos" element={<Pagamentos />} />
-            <Route path="/fechamentos" element={<Fechamentos />} />
             <Route path="/fornecedores" element={<Fornecedores />} />
             <Route path="/movimentacoes" element={<Movimentacoes />} />
           </Routes>
